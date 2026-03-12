@@ -1,6 +1,6 @@
 plugins {
-    id 'groovy'
-    id 'org.springframework.boot' version '4.0.3'
+    id 'java'
+    id 'org.springframework.boot' version '3.4.3'
     id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -25,18 +25,26 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    // Web 관련 (가장 기본)
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // AWS 파라미터 스토어 (스프링 부트 3.4.x와 호환)
+    implementation 'io.awspring.cloud:spring-cloud-aws-starter-parameter-store:3.2.0'
+
+    // DB 및 JPA
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-webmvc'
-    implementation 'org.apache.groovy:groovy'
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.mysql:mysql-connector-j'
     runtimeOnly 'com.h2database:h2'
+
+    // 모니터링 (Actuator)
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    // 편의 기능 (Lombok)
+    compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-actuator-test'
-    testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
-    testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+
+    // 테스트
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
