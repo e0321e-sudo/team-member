@@ -24,10 +24,17 @@ public class Member {
     @Column(nullable = false) // MBTI
     private String mbti;
 
+    @Column
+    private  String profileImageUrl; // S3 파일 경로(Key) 저장
+
     public Member(String name, Integer age, String mbti) {
         this.name = name;
         this.age = age;
         this.mbti = mbti;
+    }
+
+    public void updateProfileImage(String profileImageUrl) {
+        this.profileImageUrl = profileImageUrl;
     }
 
 }

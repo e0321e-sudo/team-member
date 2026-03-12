@@ -1,10 +1,31 @@
-#?? ??
-#spring:
-#  profiles:
-#    active: local
+spring:
+  # 1. ?? ??? ??
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 
+  # 2. AWS ??
+  cloud:
+    aws:
+      region:
+        static: ap-northeast-2
+      s3:
+        bucket: camp-health-suji-files
+
+  # 3. ???? ${s3.bucket.name}? ? ? ??? ??
+  s3:
+    bucket:
+      name: camp-health-suji-files
+
+# 4. Actuator ??
 management:
   endpoints:
     web:
       exposure:
         include: health, info
+  endpoint:
+    info:
+      enabled: true
+    health:
+      show-details: always

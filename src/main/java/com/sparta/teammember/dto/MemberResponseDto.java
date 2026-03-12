@@ -12,9 +12,9 @@ public class MemberResponseDto {
     private String mbti;
 
     public MemberResponseDto(Member member) {
-        this.id = getId();
-        this.name = getName();
-        this.age = getAge();
-        this.mbti = getMbti();
+        this.id = member.getId();
+        this.name = member.getName();
+        this.age = member.getAge();
+        this.mbti = member.getMbti();
     }
 }
