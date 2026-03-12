@@ -1,0 +1,12 @@
+spring:
+  config:
+    import: "aws-parameterstore:/config/teammember/"
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${spring.datasource.url}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+
+info:
+  team-name: ${team-name}
