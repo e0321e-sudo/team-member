@@ -6,7 +6,7 @@
 * **알림 유형**: 실제 비용(Actual) 기준 이메일 알림
 
 **[설정 증빙]**
-![img.png](img.png)
+![img.png](./images/img.png)
 
 ---
 
@@ -36,7 +36,7 @@
 * **Health Check 확인**: 외부 브라우저에서 서버 상태가 `UP`임을 확인했습니다.
 
 **[EC2 배포 확인 결과]**
-![img_2.png](img_2.png)
+![img_2.png](./images/img_2.png)
 
 > **확인 주소**: [http://3.38.106.17:8080/actuator/health](http://3.38.106.17:8080/actuator/health)
 > **응답 결과**: `{"status": "UP"}`
@@ -52,14 +52,14 @@
   * **소스(Source)** 항목에 Step 1에서 생성한 **EC2의 보안 그룹 ID(`sg-0de075fb5ff17b9f5`)**를 등록하여, 오직 인증된 EC2 서버를 통해서만 DB 접근이 가능하도록 설계했습니다.
 
 **[RDS 보안 그룹 설정 증빙]**
-![img_6.png](img_6.png)
+![img_6.png](./images/img_6.png)
 
 ### 2️⃣ AWS Systems Manager (Parameter Store) 활용
 * **민감 정보 관리**: DB 접속 정보(URL, Username, Password) 및 팀 이름을 코드에 노출하지 않고 AWS 클라우드 내부에 안전하게 관리했습니다.
 * **계층 구조 설계**: `/config/teammember/` 경로를 사용하여 애플리케이션별 설정을 체계화했습니다.
 
 **[Parameter Store 설정 리스트]**
-![img_5.png](img_5.png)
+![img_5.png](./images/img_5.png)
 
 ### 3️⃣ 애플리케이션 요구사항 구현 및 검증
 * **Dynamic Property 주입**: `spring-cloud-aws-starter-parameter-store` 의존성을 활용해 런타임에 설정값을 주입받아 동작하도록 구현했습니다.
@@ -70,7 +70,7 @@
 * **결과**: 외부 브라우저 및 Postman에서 Parameter Store에 저장한 `"team4"` 값이 정상적으로 응답됨을 확인했습니다.
 
 **[Postman 검증 화면]**
-![img_3.png](img_3.png)
+![img_3.png](./images/img_3.png)
 
 **[브라우저 최종 확인 결과]**
-![img_4.png](img_4.png)
+![img_4.png](./images/img_4.png)
