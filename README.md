@@ -6,7 +6,7 @@
 * **알림 유형**: 실제 비용(Actual) 기준 이메일 알림
 
 **[설정 증빙]**<br>
-![img.png](./images/img.png)
+![img.png](image2/설정증빙.png)![AWS예산설정](<./images2/budget_setup.png>)
 
 ---
 
@@ -36,7 +36,7 @@
 * **Health Check 확인**: 외부 브라우저에서 서버 상태가 `UP`임을 확인했습니다.
 
 **[EC2 배포 확인 결과]**<br>
-![img_2.png](./images/img_2.png)
+![필수 1.png](images/%ED%95%84%EC%88%98%201.png)
 
 > **확인 주소**: [http://3.38.106.17:8080/actuator/health](http://3.38.106.17:8080/actuator/health)
 > **응답 결과**: `{"status": "UP"}`
@@ -59,7 +59,7 @@
 * **계층 구조 설계**: `/config/teammember/` 경로를 사용하여 애플리케이션별 설정을 체계화했습니다.
 
 **[Parameter Store 설정 리스트]**<br>
-![img_5.png](./images/img_5.png)
+![img.png](img.png)
 
 ### 3️⃣ 애플리케이션 요구사항 구현 및 검증
 * **Dynamic Property 주입**: `spring-cloud-aws-starter-parameter-store` 의존성을 활용해 런타임에 설정값을 주입받아 동작하도록 구현했습니다.
@@ -70,10 +70,10 @@
 * **결과**: 외부 브라우저 및 Postman에서 Parameter Store에 저장한 `"team4"` 값이 정상적으로 응답됨을 확인했습니다.
 
 **[Postman 검증 화면]**<br>
-![img_3.png](./images/img_3.png)
+![img_3.png](./images/actuator접속성공화면.png)
 
 **[브라우저 최종 확인 결과]**<br>
-![img_4.png](./images/img_4.png)
+![img_4.png](./images/최종 배포 결과 URL.png)
 
 ## 🖼️ **LV 3: S3 프로필 이미지 업로드 및 보안 강화 (IAM Role)**
 서버의 확장성과 데이터 무결성을 위해 프로필 이미지를 외부 스토리지인 **AWS S3**에 저장하고, **IAM Role**을 활용하여 자격 증명 노출 없이 **안전한 접근 권한**을 관리합니다.
@@ -93,7 +93,7 @@
 * **프로필 이미지 등록 (`POST`)**: `MultipartFile`로 이미지를 받아 S3 버킷의 `profiles/` 경로에 업로드하며, 업로드 성공 시 확인 메시지를 반환합니다.
 * **Presigned URL 반환 (`GET`)**: 보안상 S3 객체를 비공개로 유지하기 위해, 유효기간이 적용된 **임시 접근 URL(Presigned URL)**을 생성하여 클라이언트에 제공합니다.
 
-**[Postman 업로드 성공 화면]**<br>
+**[Postman 업로드 성공 화면]** <br>
 ![img_1.png](image2/img_1.png)
 ---
 
