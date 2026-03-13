@@ -1,3 +1,22 @@
+# 🚀 [Spring 3기] CH 4 클라우드_아키텍처 설계 & 배포
+
+---
+## 🛠️ 기술 스택 (Tech Stack)
+
+### **Backend**
+* **Framework**: Java 17, Spring Boot 3.x
+* **Build Tool**: Gradle
+* **Database**: MySQL (RDS), H2 (Local)
+* **ORM**: Spring Data JPA
+* **Monitoring**: Spring Boot Actuator
+
+### **Infrastructure & DevOps**
+* **Cloud**: AWS (EC2, VPC, RDS, Systems Manager - Parameter Store)
+* **Deployment**: AWS EC2 (Ubuntu), JAR Execution
+* **Security**: Security Group Chaining, IAM Role
+* **Tools**: IntelliJ IDEA, Postman, Git/GitHub, TablePlus/Workbench
+
+---
 ### 🛡️ LV 0: AWS Budget 설정 완료
 실수로 인한 고가의 리소스 비용 발생을 방지하기 위해 예산 알림을 설정했습니다.
 
