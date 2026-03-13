@@ -6,7 +6,7 @@
 * **알림 유형**: 실제 비용(Actual) 기준 이메일 알림
 
 **[설정 증빙]**<br>
-![img.png](image2/설정증빙.png)![AWS예산설정](<./images2/budget_setup.png>)
+![img.png](image2/설정증빙.png)
 
 ---
 
