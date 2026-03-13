@@ -85,7 +85,7 @@
 * **IAM Role 기반 권한 관리**: `Access Key`를 코드에 하드코딩하지 않고, S3 및 SSM 접근 권한이 포함된 **IAM Role**을 생성하여 **EC2 인스턴스에 연결(Instance Profile)**했습니다.
 
 **[S3 버킷 내 객체 저장 리스트]**<br>
-![img.png](img.png)
+![img.png](image2/img.png)
 
 ---
 
@@ -94,7 +94,7 @@
 * **Presigned URL 반환 (`GET`)**: 보안상 S3 객체를 비공개로 유지하기 위해, 유효기간이 적용된 **임시 접근 URL(Presigned URL)**을 생성하여 클라이언트에 제공합니다.
 
 **[Postman 업로드 성공 화면]**<br>
-![img_1.png](img_1.png)
+![img_1.png](image2/img_1.png)
 ---
 
 ### **3️⃣ Presigned URL 유효기간 및 코드 구현**
@@ -102,7 +102,7 @@
 * **구현 로직**: `s3Template`을 활용하여 **7일의 `Duration`**을 가진 Get URL을 생성합니다.
 
 **[코드 구현 증빙 (유효기간 7일)]**<br>
-![img_3.png](img_3.png)
+![img_3.png](image2/img_3.png)
 
 ---
 
@@ -111,7 +111,7 @@
 * **결과**: IAM Role 권한을 통해 생성된 임시 URL로 S3에 저장된 **박수지 팀원의 프로필 이미지**가 정상적으로 출력됨을 확인했습니다.
 
 **[브라우저 실제 이미지 출력 결과]**<br>
-![img_4.png](img_4.png)
+![img_4.png](image2/img_4.png)
 
 ---
 
@@ -120,7 +120,7 @@
 * **시각화 확인**: Postman의 **Visualize** 기능을 활용하여, 데이터베이스에 저장된 6명의 팀원 정보(ID, Name, Age, MBTI)가 표 형태로 정확히 출력됨을 검증했습니다.
 
 **[Postman 팀원 전체 조회 결과]**<br>
-![img_6.png](img_6.png)
+![img_6.png](image2/img_6.png)
 
 > **확인 주소**: [http://3.38.106.17:8080/api/members](http://3.38.106.17:8080/api/members)
 
