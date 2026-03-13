@@ -37,7 +37,7 @@ public class ProfileImageService {
         member.updateProfileImage(s3Key);
     }
 
-    // presigned URL 생성 (7일 유효기간)
+    // presigned URL 생성 (유효기간: 7일)
     public String generatePresignedUrl(Long memberId) {
         Member member = memberRepository.findById(memberId).orElseThrow(
                 () -> new IllegalArgumentException("해당 팀원은 찾을 수 없습니다.")
