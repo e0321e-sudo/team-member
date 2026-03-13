@@ -59,7 +59,7 @@
 * **계층 구조 설계**: `/config/teammember/` 경로를 사용하여 애플리케이션별 설정을 체계화했습니다.
 
 **[Parameter Store 설정 리스트]**<br>
-![img.png](img.png)
+![img.png](images/img.png)
 
 ### 3️⃣ 애플리케이션 요구사항 구현 및 검증
 * **Dynamic Property 주입**: `spring-cloud-aws-starter-parameter-store` 의존성을 활용해 런타임에 설정값을 주입받아 동작하도록 구현했습니다.
