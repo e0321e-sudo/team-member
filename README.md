@@ -38,7 +38,7 @@
 ### 2️⃣ 애플리케이션 개발 및 운영 전략
 * **팀원 관리 API 구현**:
   * `POST /api/members`: 이름, 나이, MBTI 정보를 JSON으로 받아 저장
-  * `GET /api/members/{id}`: 저장된 팀원 상세 정보 조회
+  * `GET /api/members/{memberId}`: 저장된 팀원 상세 정보 조회
   * `GET /api/members`: 저장된 팀원 전체 정보 조회
 * **Profile 분리**: `application-local.yml`(H2)과 `application-prod.yml`(MySQL)로 환경을 분리하여 운영 안정성을 확보했습니다.
 * **로그 전략**:
@@ -67,7 +67,7 @@
 * **RDS MySQL 구축**: 로컬 테스트 및 운영을 위해 AWS RDS(MySQL 8.0)를 생성했습니다.
 * **보안 그룹 체이닝 (핵심)**:
   * RDS의 인바운드 규칙에서 불특정 다수(`0.0.0.0/0`)의 접속을 차단했습니다.
-  * **소스(Source)** 항목에 Step 1에서 생성한 **EC2의 보안 그룹 ID(`sg-0de075fb5ff17b9f5`)**를 등록하여, 오직 인증된 EC2 서버를 통해서만 DB 접근이 가능하도록 설계했습니다.
+  * **소스(Source)** 항목에 기존에 구축한 **EC2의 보안 그룹 ID(`sg-0de075fb5ff17b9f5`)**를 등록하여, 오직 인증된 EC2 서버를 통해서만 DB 접근이 가능하도록 설계했습니다.
 
 **[RDS 보안 그룹 설정 증빙]**<br>
 ![img_6.png](./images/img_6.png)
